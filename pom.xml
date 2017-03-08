@@ -11,9 +11,9 @@
 
 
     <modules>
-        <module>api</module>
+        <module>dataproviders</module>
         <module>core</module>
-        <module>web</module>
+        <module>entrypoints</module>
     </modules>
 
     <parent>
