@@ -1,12 +1,11 @@
 package org.jug.jbcn.jbcn.model.dto;
 
 /**
- * Created by mkbrv on 08/02/2017.
+ * Created by jguitart on 25/3/17.
  */
-public interface Device {
+public interface PushToken {
 
     Long getId();
-
     String getDeviceId();
-
+    String getToken();
 }

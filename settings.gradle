@@ -1,0 +1,4 @@
+include 'jbcnconf-dataproviders'
+include 'jbcnconf-core'
+include 'jbcnconf-entrypoints'
+

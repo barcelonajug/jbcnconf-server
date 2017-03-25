@@ -2,8 +2,6 @@ package org.jug.jbcn.jbcn.uc;
 
 import org.jug.jbcn.jbcn.model.dto.Comment;
 import org.jug.jbcn.jbcn.model.CommentJPA;
-import org.jug.jbcn.jbcn.repository.DeviceRepositoryJPA;
-import org.jug.jbcn.jbcn.repository.TalkRepositoryJPA;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -14,13 +12,6 @@ import java.util.Date;
  */
 @Component
 public class CommentFactory {
-
-
-    @Resource
-    private TalkRepositoryJPA talkRepository;
-
-    @Resource
-    private DeviceRepositoryJPA clientRepository;
 
 
     public CommentBuilder newComment(final Comment comment) {
