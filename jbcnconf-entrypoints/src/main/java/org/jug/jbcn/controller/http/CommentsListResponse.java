@@ -1,4 +1,4 @@
-package org.jug.jbcn.jbcn.controller.comment.http;
+package org.jug.jbcn.controller.http;
 
 import org.jug.jbcn.jbcn.model.dto.Comment;
 

@@ -20,9 +20,7 @@ public class PushTokenService {
     public void saveToken(String deviceId, String token) {
 
         Optional<PushTokenJPA> optionalToken = repository.findByDeviceId(deviceId);
-        if(optionalToken.isPresent()) {
-            repository.delete(optionalToken.get());
-        }
+        optionalToken.ifPresent(pushTokenJPA -> repository.delete(pushTokenJPA));
         PushTokenJPA pushToken = new PushTokenJPA();
         pushToken.setDeviceId(deviceId);
         pushToken.setToken(token);
@@ -39,6 +37,8 @@ public class PushTokenService {
     }
 
 
-
-
+    public void unregister(String deviceId) {
+        Optional<PushTokenJPA> optionalToken = repository.findByDeviceId(deviceId);
+        optionalToken.ifPresent(pushTokenJPA -> repository.delete(pushTokenJPA));
+    }
 }

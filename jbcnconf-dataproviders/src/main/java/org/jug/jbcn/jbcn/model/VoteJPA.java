@@ -1,24 +1,21 @@
 package org.jug.jbcn.jbcn.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * Created by jguitart on 25/3/17.
+ * Created by jguitart on 29/3/17.
  */
-
-@Entity(name = "push_token")
-public class PushTokenJPA {
+@Entity(name = "vote")
+public class VoteJPA {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String deviceId;
-
-    private String token;
+    private String meetingId;
+    private int vote;
 
     public Long getId() {
         return id;
@@ -36,11 +33,19 @@ public class PushTokenJPA {
         this.deviceId = deviceId;
     }
 
-    public String getToken() {
-        return token;
+    public String getMeetingId() {
+        return meetingId;
     }
 
-    public void setToken(String token) {
-        this.token = token;
+    public void setMeetingId(String meetingId) {
+        this.meetingId = meetingId;
+    }
+
+    public int getVote() {
+        return vote;
+    }
+
+    public void setVote(int vote) {
+        this.vote = vote;
     }
 }

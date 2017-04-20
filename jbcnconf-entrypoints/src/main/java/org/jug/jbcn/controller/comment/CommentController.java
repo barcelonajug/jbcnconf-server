@@ -1,11 +1,11 @@
-package org.jug.jbcn.jbcn.controller.comment;
+package org.jug.jbcn.controller.comment;
 
-import org.jug.jbcn.jbcn.controller.RouterConsts;
+import org.jug.jbcn.controller.RouterConsts;
+import org.jug.jbcn.controller.http.CommentsListResponse;
+import org.jug.jbcn.controller.http.RestBasicResponse;
 import org.jug.jbcn.jbcn.model.dto.Comment;
 
 import org.jug.jbcn.jbcn.uc.CommentService;
-import org.jug.jbcn.jbcn.controller.comment.http.CommentsListResponse;
-import org.jug.jbcn.jbcn.controller.comment.http.RestBasicResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
