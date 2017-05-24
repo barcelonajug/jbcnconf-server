@@ -1,29 +1,28 @@
 package org.jug.jbcn.jbcn.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Index;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * Created by jguitart on 29/3/17.
  */
-@Entity(name = "talk")
+@Document(collection = "talk")
 public class TalkJPA {
 
     @Id
-    private Long id;
+    private String id;
 
-    @Column(name = "meeting_id", unique = true, nullable = false)
+    @Indexed(unique = true)
     private String meetingId;
 
     double voteAverage;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

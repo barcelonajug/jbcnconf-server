@@ -1,15 +1,11 @@
 package org.jug.jbcn.jbcn.model.dto;
 
-
 /**
- * Created by jguitart on 29/3/17.
+ * Created by jguitart on 20/4/17.
  */
-public interface Talk {
-
-    String getId();
+public interface VoteAverage {
 
     String getMeetingId();
-
     double getVoteAverage();
 
 }

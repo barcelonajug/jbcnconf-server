@@ -11,8 +11,8 @@ import java.util.Optional;
  */
 public interface VoteRepositoryJPA extends CrudRepository<VoteJPA, Long> {
 
-    Optional<VoteJPA> getVote(String meetingId, String deviceId);
+    Optional<VoteJPA> findByMeetingIdAndDeviceId(String meetingId, String deviceId);
 
-    List<VoteJPA> getMeetingVotes(String meetingId);
+    List<VoteJPA> findAllByMeetingId(String meetingId);
 
 }

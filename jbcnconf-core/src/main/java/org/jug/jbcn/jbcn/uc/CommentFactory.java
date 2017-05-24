@@ -26,6 +26,7 @@ public class CommentFactory {
         private String name;
         private String text;
         private Date date;
+        private int vote;
 
         private CommentBuilder(final Comment comment) {
             this.talkId = comment.getTalkId();
@@ -33,6 +34,7 @@ public class CommentFactory {
             this.name = comment.getName();
             this.text = comment.getText();
             this.date = comment.getDate();
+            this.vote = comment.getVote();
         }
 
         public CommentBuilder setTalkId(String talkId) {
@@ -62,7 +64,7 @@ public class CommentFactory {
 
 
         public CommentJPA build() {
-            return new CommentJPA(talkId, deviceId, name, text, date);
+            return new CommentJPA(talkId, deviceId, name, text, date, vote);
         }
 
     }

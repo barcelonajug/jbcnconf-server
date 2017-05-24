@@ -1,17 +1,18 @@
 package org.jug.jbcn.jbcn.model;
 
-import javax.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.Date;
 
 /**
  * Created by mkbrv on 08/02/2017.
  */
-@Entity(name = "comment")
+@Document(collection = "comment")
 public class CommentJPA {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private String id;
 
     private String talkId;
 
@@ -23,23 +24,26 @@ public class CommentJPA {
 
     private Date date;
 
+    private int vote;
+
 
     public CommentJPA() {
     }
 
-    public CommentJPA(String talkId, String deviceId, String name, String text, Date date) {
+    public CommentJPA(String talkId, String deviceId, String name, String text, Date date, int vote) {
         this.talkId = talkId;
         this.deviceId = deviceId;
         this.name = name;
         this.text = text;
         this.date = date;
+        this.vote = vote;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -81,5 +85,13 @@ public class CommentJPA {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public int getVote() {
+        return vote;
+    }
+
+    public void setVote(int vote) {
+        this.vote = vote;
     }
 }

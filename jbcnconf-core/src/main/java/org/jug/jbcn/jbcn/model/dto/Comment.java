@@ -7,7 +7,7 @@ import java.util.Date;
  */
 public interface Comment {
 
-    Long getId();
+    String getId();
 
     String getDeviceId();
 
@@ -18,6 +18,8 @@ public interface Comment {
     String getTalkId();
 
     Date getDate();
+
+    int getVote();
 
 
 }

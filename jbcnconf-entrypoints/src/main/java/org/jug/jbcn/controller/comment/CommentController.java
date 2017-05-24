@@ -21,20 +21,20 @@ public class CommentController {
     @Autowired
     CommentService commentService;
 
-    @RequestMapping(value = "/{talkId}", method = RequestMethod.GET)
-    @SuppressWarnings("unchecked")
-    public CommentsListResponse getComments(@PathVariable String talkId) {
-        List<Comment> result = commentService.findCommentsByTalkId(talkId);
-        return new CommentsListResponse(true, null, talkId, result);
-    }
-
-    @RequestMapping(value = "/{talkId}", method = RequestMethod.POST)
-    @SuppressWarnings("unchecked")
-    public RestBasicResponse getComments(@PathVariable("scheduleId") final String scheduleId,
-                                         @RequestBody final Comment comment) {
-        this.commentService.save(comment);
-        return new RestBasicResponse(true, null);
-    }
+//    @RequestMapping(value = "/{talkId}", method = RequestMethod.GET)
+//    @SuppressWarnings("unchecked")
+//    public CommentsListResponse getComments(@PathVariable String talkId) {
+//        List<Comment> result = commentService.findCommentsByTalkId(talkId);
+//        return new CommentsListResponse(true, null, talkId, result);
+//    }
+//
+//    @RequestMapping(value = "/{talkId}", method = RequestMethod.POST)
+//    @SuppressWarnings("unchecked")
+//    public RestBasicResponse getComments(@PathVariable("scheduleId") final String scheduleId,
+//                                         @RequestBody final Comment comment) {
+//        this.commentService.save(comment);
+//        return new RestBasicResponse(true, null);
+//    }
 
 
 }

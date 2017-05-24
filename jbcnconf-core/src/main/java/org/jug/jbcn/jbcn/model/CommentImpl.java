@@ -14,8 +14,8 @@ public class CommentImpl extends CommentJPA implements Comment {
 
     }
 
-    public CommentImpl(String talkId, String deviceId, String name, String text, Date date) {
-        super(talkId, deviceId, name, text, date);
+    public CommentImpl(String talkId, String deviceId, String name, String text, Date date, int vote) {
+        super(talkId, deviceId, name, text, date, vote);
     }
 
     public CommentImpl(CommentJPA commentJPA) {
@@ -24,5 +24,6 @@ public class CommentImpl extends CommentJPA implements Comment {
         this.setName(commentJPA.getName());
         this.setText(commentJPA.getText());
         this.setDate(commentJPA.getDate());
+        this.setVote(commentJPA.getVote());
     }
 }

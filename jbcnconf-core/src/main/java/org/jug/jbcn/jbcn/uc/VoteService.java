@@ -18,7 +18,7 @@ public class VoteService {
     VoteRepositoryJPA voteRepository;
 
     public double voteMeeting(String meetingId, String deviceId, int vote) {
-        Optional<VoteJPA> voteOpt = voteRepository.getVote(meetingId, deviceId);
+        Optional<VoteJPA> voteOpt = voteRepository.findByMeetingIdAndDeviceId(meetingId, deviceId);
         VoteJPA voteJpa = null;
         if(voteOpt.isPresent()) {
             voteJpa = voteOpt.get();
@@ -32,7 +32,7 @@ public class VoteService {
 
         this.voteRepository.save(voteJpa);
 
-        List<VoteJPA> meetingVotes = voteRepository.getMeetingVotes(meetingId);
+        List<VoteJPA> meetingVotes = voteRepository.findAllByMeetingId(meetingId);
         int totalVotes = 0;
         for(VoteJPA meetingVote: meetingVotes) {
             totalVotes += meetingVote.getVote();
@@ -41,4 +41,6 @@ public class VoteService {
 
         return result;
     }
+
+
 }

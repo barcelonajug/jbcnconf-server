@@ -5,7 +5,7 @@ package org.jug.jbcn.jbcn.model.dto;
  */
 public interface PushToken {
 
-    Long getId();
+    String getId();
     String getDeviceId();
     String getToken();
 }

@@ -5,7 +5,7 @@ package org.jug.jbcn.jbcn.model.dto;
  */
 public interface Vote {
 
-    Long getId();
+    String getId();
     String getDeviceId();
     String getMeetingId();
     int getVote();
